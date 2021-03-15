@@ -6,9 +6,14 @@ const mongoose = require('mongoose')    // 몽고db 연결 용도
 mongoose.connect('mongodb+srv://admin:admin@react-practice.mnwlc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false  // 에러 방지
 }).then(() => console.log('MongoDB Connected..'))
-    .catch(err => console.log(err))
+  .catch(err => console.log(err))
+    
 app.get('/', (req, res) => {
   res.send('Hello World!')
+})
+
+app.get('/api/hello', (req, res) => {
+  res.send('안녕하세요!') 
 })
 
 app.listen(port, () => {
